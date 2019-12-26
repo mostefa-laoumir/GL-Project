@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/nameEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginBottom="28dp"
@@ -21,12 +21,12 @@
         android:text="Full Name"
         android:textColor="#FAFAFA"
         android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintBottom_toTopOf="@+id/emailEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/emailEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginBottom="28dp"
@@ -37,12 +37,12 @@
         android:text="Email Adresse"
         android:textColor="#FAFAFA"
         android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText6"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/passwordEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:background="@drawable/edit_round"
@@ -58,13 +58,14 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="46dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="348dp"
         android:text="Niveau"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="366dp" />
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -108,16 +109,30 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/signBtn"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="88dp"
         android:background="@drawable/edit_round"
         android:backgroundTint="#82caaf"
+        android:onClick="addUser"
         android:text="Signup"
         android:textColor=" #141E30 "
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="565dp" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/userTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
