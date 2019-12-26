@@ -7,6 +7,15 @@
     android:background="@drawable/grad"
     tools:context=".signup">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="222dp"
+        android:layout_height="268dp"
+        android:drawableTop="@drawable/pythonlogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="47dp" />
 
     <EditText
         android:id="@+id/nameEdit"
@@ -16,14 +25,17 @@
         android:background="@drawable/edit_round"
         android:ems="10"
         android:inputType="textPersonName"
-        android:paddingLeft="20dp"
 
+        android:paddingLeft="20dp"
         android:text="Full Name"
         android:textColor="#FAFAFA"
         android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/emailEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/emailEdit"
@@ -39,12 +51,15 @@
         android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/passwordEdit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <EditText
         android:id="@+id/passwordEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/edit_round"
         android:ems="10"
         android:hint="Password"
@@ -52,61 +67,24 @@
         android:paddingLeft="20dp"
         android:textColorHint="#FAFAFA"
         android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        tools:layout_editor_absoluteX="91dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_round"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:text="Level ex: 1 lmd "
+        android:textColor="#FAFAFA"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="550dp" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="348dp"
-        android:text="Niveau"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="129dp"
-        android:layout_height="173dp"
-        android:layout_marginBottom="192dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.404"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="License 1" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="License 2" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="License 3" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Master 1" />
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Master 2" />
-    </RadioGroup>
 
     <Button
         android:id="@+id/signBtn"
@@ -122,8 +100,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="624dp" />
+
 
     <TextView
         android:id="@+id/userTextView"
@@ -135,4 +115,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
