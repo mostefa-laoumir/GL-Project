@@ -62,11 +62,12 @@
         android:id="@+id/button2"
         android:layout_width="230dp"
         android:layout_height="50dp"
-        android:backgroundTint="#4ca2cd"
+        android:backgroundTint="#82caaf"
         android:background="@drawable/edit_round"
         android:text="Login"
-        android:textColor=" #f1f1f1 "
-        android:textSize="17dp"
+        android:textColor=" #141E30 "
+        android:textSize="20dp"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,6 +84,8 @@
         android:text="SignUp"
         android:textColor=" #f1f1f1 "
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="177dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
