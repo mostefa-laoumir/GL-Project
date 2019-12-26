@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:hapticFeedbackEnabled="false"
     android:background="@drawable/grad"
+    android:hapticFeedbackEnabled="false"
     tools:context=".Main2Activity">
 
 
@@ -32,11 +32,11 @@
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/edit_round"
-        android:hint="Password"
-        android:textColorHint="#FAFAFA"
-        android:paddingLeft="20dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:textColorHint="#FAFAFA"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -62,8 +62,8 @@
         android:id="@+id/button2"
         android:layout_width="230dp"
         android:layout_height="50dp"
-        android:backgroundTint="#82caaf"
         android:background="@drawable/edit_round"
+        android:backgroundTint="#82caaf"
         android:text="Login"
         android:textColor=" #141E30 "
         android:textSize="20dp"
@@ -80,12 +80,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:text="SignUp"
         android:textColor=" #f1f1f1 "
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="177dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
