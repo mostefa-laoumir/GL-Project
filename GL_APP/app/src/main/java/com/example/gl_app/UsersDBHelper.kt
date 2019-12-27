@@ -38,6 +38,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         values.put(DBContract.UserEntry.COLUMN_EMAIL, user.email)
         values.put(DBContract.UserEntry.COLUMN_PASSWORD, user.password)
         values.put(DBContract.UserEntry.COLUMN_NIVEAU, user.niveau)
+        values.put(DBContract.UserEntry.COLUMN_REG, user.reg)
 
         // Insert the new row, returning the primary key value of the new row
         val newRowId = db.insert(DBContract.UserEntry.TABLE_NAME, null, values)
