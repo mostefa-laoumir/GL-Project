@@ -12,7 +12,7 @@ object DBContract {
             val COLUMN_EMAIL = "email"
             val COLUMN_PASSWORD = "password"
             val COLUMN_NIVEAU = "niveau"
-           // val COLUMN_REG = "reg"
+            val COLUMN_REG = "reg"
         }
     }
 }

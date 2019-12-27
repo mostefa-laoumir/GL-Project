@@ -41,7 +41,6 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 
         // Insert the new row, returning the primary key value of the new row
         val newRowId = db.insert(DBContract.UserEntry.TABLE_NAME, null, values)
-
         return true
     }
 
@@ -55,6 +54,30 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         val selectionArgs = arrayOf(name)
         // Issue SQL statement.
         db.delete(DBContract.UserEntry.TABLE_NAME, selection, selectionArgs)
+
+        return true
+    }
+    @Throws(SQLiteConstraintException::class)
+    fun updateUser(email: String): Boolean {
+        // Gets the data repository in write mode
+        val db = writableDatabase
+        // Define 'where' part of query.
+        val selection = DBContract.UserEntry.COLUMN_EMAIL + " LIKE ?"
+        // Specify arguments in placeholder order.
+        val selectionArgs = arrayOf(email)
+        // Issue SQL statement.
+        // Create a new map of values, where column names are the keys
+        val values = ContentValues()
+        val usr = readUser(email)
+
+        values.put(DBContract.UserEntry.COLUMN_NAME, usr.elementAt(0).name)
+        values.put(DBContract.UserEntry.COLUMN_EMAIL, usr.elementAt(0).email)
+        values.put(DBContract.UserEntry.COLUMN_PASSWORD, usr.elementAt(0).password)
+        values.put(DBContract.UserEntry.COLUMN_NIVEAU, usr.elementAt(0).niveau)
+        values.put(DBContract.UserEntry.COLUMN_REG, usr.elementAt(0).reg)
+
+
+        db.update(DBContract.UserEntry.TABLE_NAME,values, selection, selectionArgs)
 
         return true
     }
@@ -75,14 +98,17 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var email: String
         var niveau : String
         var password : String
+        var reg : String
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
                 name = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NAME))
                 email = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_EMAIL))
                 niveau = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NIVEAU))
                 password = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_PASSWORD))
+                reg = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_REG))
 
-                users.add(UserModel(name, email, password, niveau))
+
+                users.add(UserModel(name, email, password, niveau,reg))
                 cursor.moveToNext()
             }
         }
@@ -104,14 +130,15 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var name: String
         var password: String
         var niveau : String
+        var reg : String
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
                 email = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_EMAIL))
                 name = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NAME))
                 password = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_PASSWORD))
                 niveau = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NIVEAU))
-
-                users.add(UserModel(name, email, password, niveau))
+                reg = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_REG))
+                users.add(UserModel(name, email, password, niveau,reg))
                 cursor.moveToNext()
             }
         }
@@ -128,7 +155,9 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
                     DBContract.UserEntry.COLUMN_EMAIL + " TEXT PRIMARY KEY," +
                     DBContract.UserEntry.COLUMN_NAME + " TEXT," +
                     DBContract.UserEntry.COLUMN_PASSWORD + " TEXT," +
-                    DBContract.UserEntry.COLUMN_NIVEAU + " TEXT)"
+                    DBContract.UserEntry.COLUMN_NIVEAU + " TEXT," +
+                    DBContract.UserEntry.COLUMN_REG + " TEXT)"
+
 
         private val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + DBContract.UserEntry.TABLE_NAME
     }

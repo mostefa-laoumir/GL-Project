@@ -15,11 +15,11 @@ class signup : AppCompatActivity() {
     }
 
     fun addUser(v: View){
-        var email = this.emailEdit.text.toString()
-        var name = this.nameEdit.text.toString()
-        var password = this.passwordEdit.text.toString()
-    //    var niveau = this..text.toString()
-        var result = usersDBHelper.insertUser(UserModel(name = name,email = email,password = password, niveau = "License 1"))
+        val email = this.emailEdit.text.toString()
+        val name = this.nameEdit.text.toString()
+        val password = this.passwordEdit.text.toString()
+        val niveau = this.levelEdit.text.toString()
+        val result = usersDBHelper.insertUser(UserModel(name = name,email = email,password = password, niveau = niveau,reg = "no"))
         //clear all edittext s
         this.emailEdit.setText("")
         this.nameEdit.setText("")
