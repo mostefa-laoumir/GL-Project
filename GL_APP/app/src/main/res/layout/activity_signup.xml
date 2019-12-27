@@ -70,13 +70,13 @@
         android:paddingLeft="20dp"
         android:textColorHint="#FAFAFA"
         android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintBottom_toTopOf="@+id/levelEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/levelEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:background="@drawable/edit_round"
