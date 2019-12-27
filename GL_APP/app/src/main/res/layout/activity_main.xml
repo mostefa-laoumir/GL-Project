@@ -42,13 +42,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
 
-        android:text="Inscrir"
+        android:text="APPLY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.587" />
+        app:layout_constraintVertical_bias="0.552" />
 
     <ScrollView
         android:layout_width="2dp"
