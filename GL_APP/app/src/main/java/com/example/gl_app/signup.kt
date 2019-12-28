@@ -1,8 +1,10 @@
 package com.example.gl_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_signup.*
 
 class signup : AppCompatActivity() {
@@ -24,7 +26,10 @@ class signup : AppCompatActivity() {
         this.emailEdit.setText("")
         this.nameEdit.setText("")
         this.passwordEdit.setText("")
-        this.userTextView.text = "Added user : "+result
+        Toast.makeText(this,"User added : "+result.toString(),Toast.LENGTH_LONG).show()
+        val intent = Intent(this,Main2Activity::class.java)
+        startActivity(intent)
+
         //this.ll_entries.removeAllViews()
     }
 

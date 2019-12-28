@@ -27,7 +27,8 @@ class Main2Activity : AppCompatActivity() {
         val user = usersDBHelper.readUser(email)
         if(user.elementAt(0).email == email && user.elementAt(0).password == password){
             Toast.makeText(this, user.elementAt(0).name+" : is connected!", Toast.LENGTH_LONG).show()
-            val intent = Intent(this,MainActivity::class.java)
+            var intent = Intent(this,signedin::class.java)
+            intent.putExtra("name", user.elementAt(0).name)
             startActivity(intent)
         }else{
             Toast.makeText(this, "nothing fuckoff", Toast.LENGTH_LONG).show()
