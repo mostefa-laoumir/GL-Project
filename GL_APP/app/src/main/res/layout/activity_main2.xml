@@ -47,7 +47,6 @@
         android:id="@+id/textView3"
         android:layout_width="222dp"
         android:layout_height="268dp"
-        android:layout_marginTop="92dp"
         android:drawableTop="@drawable/pythonlogo"
 
         android:textColor="#FAFAFA"
@@ -91,5 +90,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn"
-        app:layout_constraintVertical_bias="0.492" />
+        app:layout_constraintVertical_bias="0.112" />
 </androidx.constraintlayout.widget.ConstraintLayout>

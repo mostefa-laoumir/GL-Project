@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grad"
+    android:orientation="vertical"
     tools:context=".signup">
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="222dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="28dp"
-        android:drawableTop="@drawable/pythonlogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
@@ -31,11 +21,7 @@
         android:paddingLeft="20dp"
         android:text="Full Name"
         android:textColor="#FAFAFA"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/emailEdit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="14dp" />
 
     <EditText
         android:id="@+id/emailEdit"
@@ -48,11 +34,7 @@
         android:paddingLeft="20dp"
         android:text="Email Adresse"
         android:textColor="#FAFAFA"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEdit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="14dp" />
 
     <EditText
         android:id="@+id/passwordEdit"
@@ -65,11 +47,7 @@
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:textColorHint="#FAFAFA"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/levelEdit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="14dp" />
 
     <EditText
         android:id="@+id/levelEdit"
@@ -80,9 +58,7 @@
         android:paddingLeft="20dp"
         android:text="Level ex: 1 lmd "
         android:textColor="#FAFAFA"
-        android:textSize="14dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="532dp" />
+        android:textSize="14dp" />
 
     <Button
         android:id="@+id/signBtn"
@@ -95,11 +71,7 @@
         android:text="Signup"
         android:textColor=" #141E30 "
         android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textStyle="bold" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

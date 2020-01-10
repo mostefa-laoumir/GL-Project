@@ -2,6 +2,7 @@ package com.example.gl_app
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,15 +14,22 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.speaker_ticket.view.*
 
 class MainActivity : AppCompatActivity() {
+    var list = ArrayList<UserModel>()
+    lateinit var usersDBHelper : UsersDBHelper
+    var adapter:Adapterr?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        usersDBHelper = UsersDBHelper(this)
+        list =usersDBHelper.readAllUsers()
+        adapter = Adapterr(this,list)
+        tvList.adapter = adapter
         button.setOnClickListener {
             val intent = Intent(this,Main2Activity::class.java)
             startActivity(intent)
         }
     }
-    inner class AnimalAdapter: BaseAdapter{
+    inner class Adapterr: BaseAdapter{
         var list = ArrayList<UserModel>()
         var context:Context?= null
         constructor(context: Context, list :ArrayList<UserModel>):super(){
@@ -35,6 +43,7 @@ class MainActivity : AppCompatActivity() {
             if (user.reg == "oui") {
                 var myView = inflater.inflate(R.layout.speaker_ticket, null)
                 myView.tvNamee.text = user.name!!
+                myView.ivSpeaker.setImageURI(Uri.parse("drawable/speaker.png"))
                 myView.tvDescription.text = user.niveau!!
                 return myView
 

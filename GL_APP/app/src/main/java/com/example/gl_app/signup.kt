@@ -21,7 +21,7 @@ class signup : AppCompatActivity() {
         val name = this.nameEdit.text.toString()
         val password = this.passwordEdit.text.toString()
         val niveau = this.levelEdit.text.toString()
-        val result = usersDBHelper.insertUser(UserModel(name = name,email = email,password = password, niveau = niveau,reg = "no"))
+        val result = usersDBHelper.insertUser(UserModel(name = name,email = email,password = password, niveau = niveau,reg = "oui"))
         //clear all edittext s
         this.emailEdit.setText("")
         this.nameEdit.setText("")
