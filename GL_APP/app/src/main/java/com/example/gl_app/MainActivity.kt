@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         usersDBHelper = UsersDBHelper(this)
         list =usersDBHelper.readAllUsers()
         adapter = Adapterr(this,list)
+        adapter = Adapterr(this,list)
         tvList.adapter = adapter
         button.setOnClickListener {
             val intent = Intent(this,Main2Activity::class.java)
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             if (user.reg == "oui") {
                 var myView = inflater.inflate(R.layout.speaker_ticket, null)
                 myView.tvNamee.text = user.name!!
-                myView.ivSpeaker.setImageURI(Uri.parse("drawable/speaker.png"))
+                myView.ivSpeaker.setImageResource(R.drawable.speaker)
                 myView.tvDescription.text = user.niveau!!
                 return myView
 
