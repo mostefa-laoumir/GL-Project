@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.speaker_ticket.view.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,56 +22,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
     inner class AnimalAdapter: BaseAdapter{
-        var animalList = ArrayList<Animal>()
+        var list = ArrayList<UserModel>()
         var context:Context?= null
-        constructor(context: Context, animalList :ArrayList<Animal>):super(){
-            this.animalList=animalList
+        constructor(context: Context, list :ArrayList<UserModel>):super(){
+            this.list=list
             this.context = context
         }
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val animal = animalList[position]
-            var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            if(animal.isKiller==true){
-                var myView = inflater.inflate(R.layout.animal_killer_ticket,null)
-                myView.tvNamee.text=animal.name!!
-                myView.ivAnimal.setImageResource(animal.image!!)
-                myView.tvDescription.text = animal.des!!
-                myView.ivAnimal.setOnClickListener{
-                    val intent = Intent(context, Main2Activity::class.java)
-                    intent.putExtra("name",animal.name!!)
-                    intent.putExtra("des",animal.des!!)
-                    intent.putExtra("image",animal.image!!)
-                    context!!.startActivity(intent)
-                }
-                myView.ivDel.setOnClickListener{
-                    delete(position)
-                }
-
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+            val user = list[position]
+            var inflater =
+                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            if (user.reg == "oui") {
+                var myView = inflater.inflate(R.layout.speaker_ticket, null)
+                myView.tvNamee.text = user.name!!
+                myView.tvDescription.text = user.niveau!!
                 return myView
 
             }else{
-                var myView = inflater.inflate(R.layout.animal_ticket,null)
-                myView.tvNamee.text=animal.name!!
-                myView.ivAnimal.setImageResource(animal.image!!)
-                myView.tvDescription.text = animal.des!!
-                myView.ivAnimal.setOnClickListener{
-                    val intent = Intent(context, Main2Activity::class.java)
-                    intent.putExtra("name",animal.name!!)
-                    intent.putExtra("des",animal.des!!)
-                    intent.putExtra("image",animal.image!!)
-                    context!!.startActivity(intent)
-
-                }
-                myView.ivDel.setOnClickListener {
-                    delete(position)
-                }
-                return myView
+                return null
             }
-
         }
 
+
         override fun getItem(position: Int): Any {
-            return animalList[position]
+            return list[position]
         }
 
         override fun getItemId(position: Int): Long {
@@ -78,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getCount(): Int {
-            return animalList.size
+            return list.size
         }
 
     }
