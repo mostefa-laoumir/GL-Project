@@ -8,7 +8,7 @@
     android:padding="5pt">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="349dp"
 
         android:layout_height="118dp"
         android:background="@drawable/background"
@@ -18,10 +18,11 @@
             android:id="@+id/ivSpeaker"
             android:layout_width="50pt"
             android:layout_height="50pt"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/grad" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
@@ -30,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Speaker"
+                android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -37,6 +39,8 @@
                 android:id="@+id/tvDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="30px"
+                android:layout_marginLeft="20px"
                 android:text="Baboon is the animal that took care of Simba" />
         </LinearLayout>
     </LinearLayout>
