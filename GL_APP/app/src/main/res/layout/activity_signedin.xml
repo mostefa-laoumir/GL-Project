@@ -1,55 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:paddingTop="300dp"
     android:layout_height="match_parent"
-    android:background="@drawable/home_app"
-    tools:context=".MainActivity">
+    android:background="@drawable/grad"
+    android:orientation="vertical"
+    tools:context=".signup">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Python Workshop "
+
+    <EditText
+        android:id="@+id/nameEdit"
+        android:layout_gravity="center"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edit_round"
+        android:ems="10"
+
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:text="Full Name"
         android:textColor="#FAFAFA"
-        android:textSize="46dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        android:textSize="14dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="318dp"
-        android:layout_height="231dp"
-        android:text="Tuesday11   Wednesday 12                            And                Thursday 13 February 2020"
-        android:textAlignment="center"
-        android:textColor="#e9edf0"
-        android:textSize="36dp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="177dp" />
+    <EditText
+        android:id="@+id/emailEdit"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center"
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="name "
-        android:textColor="#fafafa"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="40dp" />
+        android:background="@drawable/edit_round"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        android:text="Field"
+        android:textColor="#FAFAFA"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/fileID"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edit_round"
+        android:ems="10"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:text="File"
+        android:textColor="#FAFAFA"
+        android:textSize="14dp" />
 
     <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="log out"
-        tools:layout_editor_absoluteX="305dp"
-        tools:layout_editor_absoluteY="32dp" />
+        android:id="@+id/signBtn"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/edit_round"
+        android:backgroundTint="#82caaf"
+        android:layout_gravity="center"
+
+        android:onClick="addUser"
+        android:text="Submit"
+        android:textColor=" #141E30 "
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

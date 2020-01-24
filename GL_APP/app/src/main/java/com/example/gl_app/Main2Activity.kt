@@ -30,8 +30,13 @@ class Main2Activity : AppCompatActivity() {
             var intent = Intent(this,signedin::class.java)
             intent.putExtra("name", user.elementAt(0).name)
             startActivity(intent)
+        }else if(user.elementAt(0).email == "admin" && user.elementAt(0).password == "admin"){
+                Toast.makeText(this, user.elementAt(0).name+" : is connected!", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,admin::class.java)
+                intent.putExtra("name", user.elementAt(0).name)
+                startActivity(intent)
         }else{
-            Toast.makeText(this, "nothing fuckoff", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Not a user", Toast.LENGTH_LONG).show()
         }
 
     }
