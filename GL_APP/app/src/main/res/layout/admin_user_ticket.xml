@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+
+    android:orientation="horizontal"
+    android:padding="5pt">
+
+    <LinearLayout
+        android:layout_width="383dp"
+
+        android:layout_height="118dp"
+        android:background="@drawable/background"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivSpeaker"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/grad" />
+
+        <LinearLayout
+            android:layout_width="229dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNamee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Speaker"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="30px"
+                android:layout_marginLeft="20px"
+                android:text="descriptiopn" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/refuse"
+                android:layout_width="22dp"
+                android:layout_height="53dp"
+                android:layout_gravity="right"
+                app:srcCompat="@android:drawable/ic_delete" />
+
+            <ImageView
+                android:id="@+id/accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_input_add" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

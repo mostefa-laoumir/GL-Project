@@ -39,6 +39,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         values.put(DBContract.UserEntry.COLUMN_PASSWORD, user.password)
         values.put(DBContract.UserEntry.COLUMN_NIVEAU, user.niveau)
         values.put(DBContract.UserEntry.COLUMN_REG, user.reg)
+        values.put(DBContract.UserEntry.COLUMN_ACCEPTED, user.accepted)
 
         // Insert the new row, returning the primary key value of the new row
         val newRowId = db.insert(DBContract.UserEntry.TABLE_NAME, null, values)
@@ -100,6 +101,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var niveau : String
         var password : String
         var reg : String
+        var acc : String
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
                 name = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NAME))
@@ -107,9 +109,9 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
                 niveau = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NIVEAU))
                 password = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_PASSWORD))
                 reg = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_REG))
+                acc = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_ACCEPTED))
 
-
-                users.add(UserModel(name, email, password, niveau,reg))
+                users.add(UserModel(name, email, password, niveau,reg,acc))
                 cursor.moveToNext()
             }
         }
@@ -132,6 +134,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var password: String
         var niveau : String
         var reg : String
+        var acc : String
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
                 email = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_EMAIL))
@@ -139,7 +142,8 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
                 password = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_PASSWORD))
                 niveau = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NIVEAU))
                 reg = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_REG))
-                users.add(UserModel(name, email, password, niveau,reg))
+                acc = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_ACCEPTED))
+                users.add(UserModel(name, email, password, niveau,reg,acc))
                 cursor.moveToNext()
             }
         }
@@ -157,7 +161,8 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
                     DBContract.UserEntry.COLUMN_NAME + " TEXT," +
                     DBContract.UserEntry.COLUMN_PASSWORD + " TEXT," +
                     DBContract.UserEntry.COLUMN_NIVEAU + " TEXT," +
-                    DBContract.UserEntry.COLUMN_REG + " TEXT)"
+                    DBContract.UserEntry.COLUMN_REG + " TEXT," +
+                    DBContract.UserEntry.COLUMN_ACCEPTED + " TEXT)"
 
 
         private val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + DBContract.UserEntry.TABLE_NAME

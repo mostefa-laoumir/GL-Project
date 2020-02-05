@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         usersDBHelper = UsersDBHelper(this)
         list =usersDBHelper.readAllUsers()
         adapter = Adapterr(this,list)
-        adapter = Adapterr(this,list)
         tvList.adapter = adapter
         button.setOnClickListener {
             val intent = Intent(this,Main2Activity::class.java)
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             val user = list[position]
             var inflater =
                 context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            if (user.reg == "oui") {
+            if (user.accepted == "yes") {
                 var myView = inflater.inflate(R.layout.speaker_ticket, null)
                 myView.tvNamee.text = user.name!!
                 myView.ivSpeaker.setImageResource(R.drawable.speaker)
@@ -49,7 +48,12 @@ class MainActivity : AppCompatActivity() {
                 return myView
 
             }else{
-                return null
+                var myView = inflater.inflate(R.layout.speaker_ticket, null)
+                myView.tvNamee.text = "not accepted"
+                myView.ivSpeaker.setImageResource(R.drawable.speaker)
+                myView.tvDescription.text = "9iw"
+                return myView
+
             }
         }
 

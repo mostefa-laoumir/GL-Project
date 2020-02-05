@@ -12,7 +12,7 @@ class signedin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signedin)
         var bundle: Bundle? =intent.extras
-        try{
+            /*try{
             name = bundle!!.getString("name")
             tvName.text = name
         }catch (e:Exception){
@@ -22,6 +22,6 @@ class signedin : AppCompatActivity() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this,"Logged Out!",Toast.LENGTH_LONG).show()
-        }
+        }*/
     }
 }

@@ -49,17 +49,6 @@
         android:textColorHint="#FAFAFA"
         android:textSize="14dp" />
 
-    <EditText
-        android:id="@+id/levelEdit"
-        android:layout_width="230dp"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_round"
-        android:inputType="text"
-        android:paddingLeft="20dp"
-        android:text="Level ex: 1 lmd "
-        android:textColor="#FAFAFA"
-        android:textSize="14dp" />
-
     <Button
         android:id="@+id/signBtn"
         android:layout_width="230dp"
