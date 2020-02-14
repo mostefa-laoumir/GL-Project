@@ -59,12 +59,11 @@
         android:id="@+id/signBtn"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
         android:layout_marginBottom="72dp"
         android:background="@drawable/edit_round"
         android:backgroundTint="#82caaf"
-        android:layout_gravity="center"
 
-        android:onClick="addUser"
         android:text="Submit"
         android:textColor=" #141E30 "
         android:textSize="20dp"

@@ -2,6 +2,7 @@ package com.example.gl_app
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -48,9 +49,13 @@ class admin : AppCompatActivity() {
                 myView.ivSpeaker.setImageResource(R.drawable.speaker)
                 myView.tvDescription.text = user.niveau!!
                 myView.accept.setOnClickListener{
-
+                //myView.setBackgroundColor(Color.GREEN)
+                myView.layout.setBackgroundColor(Color.BLACK)
+                    myView.tvNamee.text="holla madafaka"
                 }
+
                 myView.refuse.setOnClickListener {
+                    myView.setBackgroundColor(Color.RED)
 
                 }
                 return myView

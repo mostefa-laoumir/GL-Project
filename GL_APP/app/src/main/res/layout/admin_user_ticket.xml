@@ -9,8 +9,8 @@
     android:padding="5pt">
 
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="383dp"
-
         android:layout_height="118dp"
         android:background="@drawable/background"
         android:orientation="horizontal">
