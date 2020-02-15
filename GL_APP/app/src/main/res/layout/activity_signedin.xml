@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,23 +26,43 @@
         android:textColor="#FAFAFA"
         android:textSize="14dp" />
 
-    <EditText
-        android:id="@+id/emailEdit"
-        android:layout_width="230dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="24dp"
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip"
+        android:layout_marginLeft="90dp"
+        android:text="Python For Web Developement"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
 
-        android:background="@drawable/edit_round"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:paddingLeft="20dp"
-        android:text="Field"
-        android:textColor="#FAFAFA"
-        android:textSize="14dp" />
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip2"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:text="Python For Artificial Inteligence"
+        android:layout_marginLeft="90dp"
+
+        android:layout_height="wrap_content" />
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip4"
+        android:layout_width="match_parent"
+        android:text="Python For Security"
+        android:textColor="@color/white"
+        android:layout_marginLeft="90dp"
+
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip3"
+        android:layout_marginLeft="90dp"
+
+        android:text="Python For Desktop Developement"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/fileID"
+        android:layout_marginTop="10dp"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
