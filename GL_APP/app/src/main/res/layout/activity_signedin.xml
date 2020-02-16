@@ -4,12 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingTop="21dp"
     android:layout_height="match_parent"
     android:background="@drawable/grad"
     android:orientation="vertical"
+    android:paddingTop="130dp"
     tools:context=".signup">
-
 
     <EditText
         android:id="@+id/nameEdit"
@@ -20,10 +19,11 @@
         android:background="@drawable/edit_round"
         android:ems="10"
 
+        android:hint="Full Name"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
-        android:text="Full Name"
-        android:textColor="#FAFAFA"
+        android:textColor="#fafafa"
+        android:textColorHint="#FAFAFA"
         android:textSize="14dp" />
 
     <RadioGroup
@@ -33,58 +33,63 @@
 
         <RadioButton
             android:id="@+id/r1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
+            android:layout_width="256dp"
+            android:layout_height="45dp"
             android:focusedByDefault="true"
             android:text="Python for Artificial Intelligence"
             android:textColor="@color/white"
-            android:textColorHighlight="#3FC469"
-            android:textColorHint="#192024"
-            android:textColorLink="#3FC469" />
+            android:textColorHighlight="#FAFAFA"
+            android:textColorHint="#FAFAFA"
+            android:buttonTint="#fafafa"
+            android:textColorLink="#FAFAFA" />
 
         <RadioButton
             android:id="@+id/r2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="257dp"
+            android:layout_height="46dp"
             android:text="Python for Security"
             android:textColor="@color/white"
             android:textColorHighlight="#3FC469"
             android:textColorHint="#192024"
-            android:textColorLink="#3FC469" />
+            android:textColorLink="#3FC469"
+            android:buttonTint="#fafafa"/>
 
         <RadioButton
             android:id="@+id/r3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="258dp"
+            android:layout_height="46dp"
             android:text="Python for Web developement"
             android:textColor="@color/white"
             android:textColorHighlight="#3FC469"
             android:textColorHint="#192024"
-            android:textColorLink="#3FC469" />
+            android:textColorLink="#3FC469"
+            android:buttonTint="#fafafa"/>
 
         <RadioButton
             android:id="@+id/r4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="42dp"
             android:text="Python for Desktop Developement"
             android:textColor="@color/white"
             android:textColorHighlight="#3FC469"
             android:textColorHint="#192024"
-            android:textColorLink="#3FC469" />
+            android:textColorLink="#3FC469"
+            android:buttonTint="#fafafa"/>
+
     </RadioGroup>
+
+
 
     <Button
         android:id="@+id/importBtn"
-        android:layout_marginTop="10dp"
-        android:layout_width="270dp"
+        android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/edit_round"
         android:ems="10"
-        android:paddingLeft="20dp"
+        android:paddingLeft="0dp"
         android:text="Import File..."
         android:textColor="#FAFAFA"
         android:textSize="14dp" />
@@ -103,10 +108,10 @@
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="72dp"
         android:background="@drawable/edit_round"
         android:backgroundTint="#82caaf"
-
         android:text="Submit"
         android:textColor=" #141E30 "
         android:textSize="20dp"

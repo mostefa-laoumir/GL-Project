@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
-
-import java.util.ArrayList
+import java.sql.Blob
+import java.util.*
 
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
@@ -60,7 +60,56 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return true
     }
     @Throws(SQLiteConstraintException::class)
-    fun updateUser(email: String): Boolean {
+    fun updateUserNiv(email: String,niveau:String): Boolean {
+        // Gets the data repository in write mode
+        val db = writableDatabase
+        // Define 'where' part of query.
+        val selection = DBContract.UserEntry.COLUMN_EMAIL + " LIKE ?"
+        // Specify arguments in placeholder order.
+        val selectionArgs = arrayOf(email)
+        // Issue SQL statement.
+        // Create a new map of values, where column names are the keys
+        val values = ContentValues()
+        val usr = readUser(email)
+
+        values.put(DBContract.UserEntry.COLUMN_NAME, usr.elementAt(0).name)
+        values.put(DBContract.UserEntry.COLUMN_EMAIL, usr.elementAt(0).email)
+        values.put(DBContract.UserEntry.COLUMN_PASSWORD, usr.elementAt(0).password)
+        values.put(DBContract.UserEntry.COLUMN_NIVEAU, niveau)
+        values.put(DBContract.UserEntry.COLUMN_REG, usr.elementAt(0).reg)
+
+
+        db.update(DBContract.UserEntry.TABLE_NAME,values, selection, selectionArgs)
+
+        return true
+    }
+    fun updateUserreg(email: String): Boolean {
+        // Gets the data repository in write mode
+        val db = writableDatabase
+        // Define 'where' part of query.
+        val selection = DBContract.UserEntry.COLUMN_EMAIL + " LIKE ?"
+        // Specify arguments in placeholder order.
+        val selectionArgs = arrayOf(email)
+        // Issue SQL statement.
+        // Create a new map of values, where column names are the keys
+        val values = ContentValues()
+        val usr = readUser(email)
+
+        values.put(DBContract.UserEntry.COLUMN_NAME, usr.elementAt(0).name)
+        values.put(DBContract.UserEntry.COLUMN_EMAIL, usr.elementAt(0).email)
+        values.put(DBContract.UserEntry.COLUMN_PASSWORD, usr.elementAt(0).password)
+        values.put(DBContract.UserEntry.COLUMN_NIVEAU, usr.elementAt(0).niveau)
+        values.put(DBContract.UserEntry.COLUMN_REG, "yes")
+        values.put(DBContract.UserEntry.COLUMN_ACCEPTED, usr.elementAt(0).accepted)
+
+
+
+        db.update(DBContract.UserEntry.TABLE_NAME,values, selection, selectionArgs)
+
+        return true
+    }
+    @Throws(SQLiteConstraintException::class)
+    fun updateUseracc(email: String,acc:String): Boolean {
         // Gets the data repository in write mode
         val db = writableDatabase
         // Define 'where' part of query.
@@ -77,13 +126,13 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         values.put(DBContract.UserEntry.COLUMN_PASSWORD, usr.elementAt(0).password)
         values.put(DBContract.UserEntry.COLUMN_NIVEAU, usr.elementAt(0).niveau)
         values.put(DBContract.UserEntry.COLUMN_REG, usr.elementAt(0).reg)
+        values.put(DBContract.UserEntry.COLUMN_ACCEPTED, acc)
 
 
         db.update(DBContract.UserEntry.TABLE_NAME,values, selection, selectionArgs)
 
         return true
     }
-
     fun readUser(userid: String): ArrayList<UserModel> {
         val users = ArrayList<UserModel>()
         val db = writableDatabase

@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_signedin.view.*
 import kotlinx.android.synthetic.main.admin_user_ticket.view.*
 import kotlinx.android.synthetic.main.speaker_ticket.view.*
 import kotlinx.android.synthetic.main.speaker_ticket.view.ivSpeaker
@@ -43,28 +44,38 @@ class admin : AppCompatActivity() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
             val user = list[position]
             var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            if (user.reg == "oui") {
+            if (user.reg == "yes") {
                 var myView = inflater.inflate(R.layout.admin_user_ticket, null)
-                myView.tvNamee.text = user.name!!
+                myView.tvNamee.text = user.name!!+"(Regestered)"
                 myView.ivSpeaker.setImageResource(R.drawable.speaker)
                 myView.tvDescription.text = user.niveau!!
                 myView.accept.setOnClickListener{
-                //myView.setBackgroundColor(Color.GREEN)
-                myView.layout.setBackgroundColor(Color.BLACK)
-                    myView.tvNamee.text="holla madafaka"
+                    myView.tvNamee.setTextColor(Color.GREEN)
+                    usersDBHelper.updateUseracc(user.email,"yes")
                 }
 
                 myView.refuse.setOnClickListener {
-                    myView.setBackgroundColor(Color.RED)
+                    myView.tvNamee.setTextColor(Color.RED)
+                    usersDBHelper.updateUseracc(user.email,"no")
 
                 }
                 return myView
 
             }else{
                 var myView = inflater.inflate(R.layout.admin_user_ticket, null)
-                myView.tvNamee.text = user.name!!+"(not registered)"
+                myView.tvNamee.text = user.name!!+"(Not Registered)"
                 myView.ivSpeaker.setImageResource(R.drawable.speaker)
                 myView.tvDescription.text = user.niveau!!
+                myView.accept.setOnClickListener{
+                    myView.tvNamee.setTextColor(Color.GREEN)
+                    usersDBHelper.updateUseracc(user.email,"yes")
+                }
+
+                myView.refuse.setOnClickListener {
+                    myView.tvNamee.setTextColor(Color.RED)
+                    usersDBHelper.updateUseracc(user.email,"no")
+
+                }
                 return myView            }
         }
 

@@ -9,37 +9,57 @@
     tools:context=".signup">
 
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="222dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="80dp"
+
+        android:drawableTop="@drawable/pythonlogo"
+        android:textColor="#FAFAFA"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/nameEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/edit_round"
         android:ems="10"
-
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
-        android:text="Full Name"
-        android:textColor="#FAFAFA"
+        android:hint="Full Name"
+        android:textColorHint="#FAFAFA"
+        android:textColor="#fafafa"
         android:textSize="14dp" />
 
     <EditText
         android:id="@+id/emailEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/edit_round"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
-        android:text="Email Adresse"
-        android:textColor="#FAFAFA"
+        android:hint="Email Adresse"
+        android:textColorHint="#FAFAFA"
+        android:textColor="#fafafa"
         android:textSize="14dp" />
 
     <EditText
         android:id="@+id/passwordEdit"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/edit_round"
         android:ems="10"
@@ -47,12 +67,14 @@
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:textColorHint="#FAFAFA"
+        android:textColor="#fafafa"
         android:textSize="14dp" />
 
     <Button
         android:id="@+id/signBtn"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginBottom="72dp"
         android:background="@drawable/edit_round"
         android:backgroundTint="#82caaf"

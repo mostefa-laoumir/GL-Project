@@ -30,6 +30,7 @@ class Main2Activity : AppCompatActivity() {
             Toast.makeText(this, user.elementAt(0).name+" : is connected!", Toast.LENGTH_LONG).show()
             var intent = Intent(this,signedin::class.java)
             intent.putExtra("name", user.elementAt(0).name)
+            intent.putExtra("email", user.elementAt(0).email)
             startActivity(intent)
         }}
         if(email == "admin" && password== "admin"){

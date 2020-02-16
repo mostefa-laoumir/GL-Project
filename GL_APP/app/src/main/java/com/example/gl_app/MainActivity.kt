@@ -2,6 +2,7 @@ package com.example.gl_app
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -42,18 +43,26 @@ class MainActivity : AppCompatActivity() {
                 context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             if (user.accepted == "yes") {
                 var myView = inflater.inflate(R.layout.speaker_ticket, null)
-                myView.tvNamee.text = user.name!!
+                myView.tvNamee.text = user.name!!+"(Accepted)"
+                myView.tvNamee.setTextColor(Color.GREEN)
                 myView.ivSpeaker.setImageResource(R.drawable.speaker)
                 myView.tvDescription.text = user.niveau!!
                 return myView
 
-            }else{
+            }else if(user.accepted == "no"){
                 var myView = inflater.inflate(R.layout.speaker_ticket, null)
-                myView.tvNamee.text = "not accepted"
+                myView.tvNamee.setTextColor(Color.RED)
+                myView.tvNamee.text = user.name+"(not accepted)"
                 myView.ivSpeaker.setImageResource(R.drawable.speaker)
-                myView.tvDescription.text = "9iw"
+                myView.tvDescription.text = user.niveau
                 return myView
 
+            }else{
+                var myView = inflater.inflate(R.layout.speaker_ticket, null)
+                myView.tvNamee.text = user.name+"(Pending)"
+                myView.ivSpeaker.setImageResource(R.drawable.speaker)
+                myView.tvDescription.text = user.niveau
+                return myView
             }
         }
 

@@ -2,27 +2,63 @@ package com.example.gl_app
 
 import android.content.Intent
 import android.database.Cursor
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.provider.OpenableColumns
 import android.util.Base64
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_signedin.*
-
 import java.io.File
 
 
 class signedin : AppCompatActivity() {
+    var list = ArrayList<UserModel>()
+    lateinit var usersDBHelper : UsersDBHelper
+    var adapter: MainActivity.Adapterr?=null
         var name:String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signedin)
+        usersDBHelper = UsersDBHelper(this)
+        list =usersDBHelper.readAllUsers()
         var bundle: Bundle? =intent.extras
+        var email = bundle!!.getString("email")
 
 
-            /*signBtn.setOnClickListener {
+          signBtn.setOnClickListener {
+              var s:String = ""
+              when {
+                  r1.isChecked -> {
+                      s = r1.text.toString()
+                      Toast.makeText(this, ""+r1.text.toString(), Toast.LENGTH_SHORT).show()
 
-            }*/
+                  }
+                  r2.isChecked -> {
+                      s = r2.text.toString()
+                      Toast.makeText(this, ""+r2.text.toString(), Toast.LENGTH_SHORT).show()
+
+                  }
+                  r3.isChecked -> {
+                      s = r3.text.toString()
+                      Toast.makeText(this, ""+r3.text.toString(), Toast.LENGTH_SHORT).show()
+
+                  }
+                  r4.isChecked -> {
+                      s = r4.text.toString()
+                      Toast.makeText(this, ""+r4.text.toString(), Toast.LENGTH_SHORT).show()
+
+                  }
+
+              }
+              usersDBHelper.updateUserNiv(email.toString(),s)
+              usersDBHelper.updateUserreg(email.toString())
+              Toast.makeText(this, "OK!"+r1.text.toString(), Toast.LENGTH_LONG).show()
+
+          }
+
         importBtn.setOnClickListener {
 
             val intent = Intent()
@@ -42,6 +78,13 @@ class signedin : AppCompatActivity() {
         if (requestCode == 111 && resultCode == RESULT_OK) {
             val selectedFile = data?.data //The uri with the location of the file
             fileNameID.text=getFileName(selectedFile!!)
+           // val file = File(getPath(selectedFile))
+           // val b64 = convertToBase64(file)
+           // val decodedByte: ByteArray = Base64.decode(b64, 0)
+            //val bitmap = BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.size)
+
+
+
         }
     }
     fun getFileName(uri: Uri): String? {
@@ -64,5 +107,18 @@ class signedin : AppCompatActivity() {
             }
         }
         return result
+    }
+
+    fun getPath(uri: Uri?): String? {
+        val projection =
+            arrayOf(MediaStore.Images.Media.DATA)
+        val cursor =
+            contentResolver.query(uri!!, projection, null, null, null)
+                ?: return null
+        val column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        cursor.moveToFirst()
+        val s = cursor.getString(column_index)
+        cursor.close()
+        return s
     }
 }

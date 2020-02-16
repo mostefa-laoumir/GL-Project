@@ -11,7 +11,8 @@
     <ListView
         android:id="@+id/tvList"
         android:layout_width="409dp"
-        android:layout_height="409dp"
+        android:layout_height="508dp"
+        android:layout_marginTop="30dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
@@ -19,14 +20,18 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="60dp"
 
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/edit_round"
+        android:backgroundTint="#82caaf"
+        android:text="logout"
+        android:textColor=" #141E30 "
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
